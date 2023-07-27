@@ -17,8 +17,8 @@ namespace ORM_Dapper
         }
         public IEnumerable<Department> GetAllDepartments()
         {
-            var depos = _connection.Query<Department>("Select * from Departments;");
-            return depos;
+            return _connection.Query<Department>("Select * from Departments;");
+            
         }
 
         public void InsertDepartment(string newDepartmentName)

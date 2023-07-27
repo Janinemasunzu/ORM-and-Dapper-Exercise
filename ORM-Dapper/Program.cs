@@ -23,15 +23,15 @@ namespace ORM_Dapper
             var instance = new DapperDepartmentRepository(conn);
 
             Console.WriteLine("Please Enter in your new department");
-            string userInput =Console.ReadLine();
+            string userInput = Console.ReadLine();
 
             instance.InsertDepartment(userInput);
 
             var departmentCollection = instance.GetAllDepartments();
 
-            foreach (Department item in departmentCollection)
+            foreach (var item in departmentCollection)
             {
-                Console.WriteLine($"Department ID; {item.DepartmentID}");
+                Console.WriteLine($"{item.DepartmentID} {item.Name}");
             }
 
 
